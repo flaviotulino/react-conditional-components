@@ -1,7 +1,7 @@
 import Choose from './components/Choose';
 import If from './components/If';
 import Otherwise from './components/Otherwise';
-import When from './When';
+import When from './components/When';
 
 export {
   Choose,

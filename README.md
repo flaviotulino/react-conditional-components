@@ -1,31 +1,41 @@
-# react-conditional-components
+This project is inspired by [JSX-control-statements](https://github.com/AlexGilleran/jsx-control-statements).
 
-> 
+The problem I found with that module was that I couldn't use it with Create React App, because it is a Babel Plugin and if you use CRA you cannot edit your 
+webpack/Babel config unless you eject the app.
 
-[![NPM](https://img.shields.io/npm/v/react-conditional-components.svg)](https://www.npmjs.com/package/react-conditional-components) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+This simple module provides
 
-## Install
+- `<If>` statement
 
-```bash
-npm install --save react-conditional-components
+```javascript
+....
+<If condition={/* your condition here */}>
+  ... some other component(s)
+</If>
 ```
 
-## Usage
+- `<Choose>`, `<When` and `<Otherwise>` statements
+If you have more complex condition, you should be using the <Choose />
 
-```jsx
-import React, { Component } from 'react'
+```javascript
+<Choose>
+  <When condition={trueCondtition}>
+    ... stuff here ...
+  </When>
+  <When condition={anotherTrueCondition}>
+    ... other stuff here ...
+  </When>
 
-import MyComponent from 'react-conditional-components'
+  <When condition={falsyCondition}>
+    ... this won't be visible ...
+  </When>
 
-class Example extends Component {
-  render () {
-    return (
-      <MyComponent />
-    )
-  }
-}
+  <Otherwise>
+    ... this will be visibile only if ALL of the previous conditions are
+    false
+  </Otherwise>
+</Choose>
 ```
 
-## License
-
-MIT © [](https://github.com/)
+> Note
+You must have at least one <When> statement if you wrap it into a <Choose>.

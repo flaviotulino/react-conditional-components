@@ -1,2 +1,2 @@
-const Otherwise = ({ children }) => children;
-export default Otherwise;
+const Otherwise = ({ children }) => children
+export default Otherwise
